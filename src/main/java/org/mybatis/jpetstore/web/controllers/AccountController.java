@@ -52,7 +52,7 @@ public class AccountController {
   private static final List<String> LANGUAGE_LIST = Collections.unmodifiableList(Arrays.asList("english", "japanese"));
   /** The category list. */
   private static final List<String> CATEGORY_LIST = Collections
-      .unmodifiableList(Arrays.asList("FISH", "DOGS", "REPTILES", "CATS", "BIRDS"));
+      .unmodifiableList(Arrays.asList("OUTERWEAR", "KNITWEAR", "TROUSERS", "SHIRTS", "ACCESSORY"));
 
   /** The account service. */
   @Autowired

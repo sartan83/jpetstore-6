@@ -69,10 +69,10 @@ class AccountMapperTest {
     assertThat(account.getCountry()).isEqualTo("USA");
     assertThat(account.getPhone()).isEqualTo("555-555-5555");
     assertThat(account.getLanguagePreference()).isEqualTo("english");
-    assertThat(account.getFavouriteCategoryId()).isEqualTo("DOGS");
+    assertThat(account.getFavouriteCategoryId()).isEqualTo("KNITWEAR");
     assertThat(account.isListOption()).isTrue();
     assertThat(account.isBannerOption()).isTrue();
-    assertThat(account.getBannerName()).isEqualTo("<image src=\"/jpetstore/images/banner_dogs.gif\">");
+    assertThat(account.getBannerName()).isEqualTo("<image src=\"/jpetstore/images/banner_knitwear.svg\">");
 
   }
 
@@ -102,10 +102,10 @@ class AccountMapperTest {
     assertThat(account.getCountry()).isEqualTo("USA");
     assertThat(account.getPhone()).isEqualTo("555-555-5555");
     assertThat(account.getLanguagePreference()).isEqualTo("english");
-    assertThat(account.getFavouriteCategoryId()).isEqualTo("CATS");
+    assertThat(account.getFavouriteCategoryId()).isEqualTo("SHIRTS");
     assertThat(account.isListOption()).isTrue();
     assertThat(account.isBannerOption()).isTrue();
-    assertThat(account.getBannerName()).isEqualTo("<image src=\"/jpetstore/images/banner_cats.gif\">");
+    assertThat(account.getBannerName()).isEqualTo("<image src=\"/jpetstore/images/banner_shirts.svg\">");
 
   }
 

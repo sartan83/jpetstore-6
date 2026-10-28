@@ -46,7 +46,7 @@ class ProductMapperTest {
   @Test
   void getProductListByCategory() {
     // given
-    String categoryId = "FISH";
+    String categoryId = "OUTERWEAR";
 
     // when
     List<Product> products = mapper.getProductListByCategory(categoryId);
@@ -54,26 +54,26 @@ class ProductMapperTest {
     // then
     products.sort(Comparator.comparing(Product::getProductId));
     assertThat(products).hasSize(4);
-    assertThat(products.get(0).getProductId()).isEqualTo("FI-FW-01");
-    assertThat(products.get(0).getName()).isEqualTo("Koi");
-    assertThat(products.get(0).getCategoryId()).isEqualTo("FISH");
+    assertThat(products.get(0).getProductId()).isEqualTo("OW-DG-01");
+    assertThat(products.get(0).getName()).isEqualTo("Down Gilet");
+    assertThat(products.get(0).getCategoryId()).isEqualTo("OUTERWEAR");
     assertThat(products.get(0).getDescription())
-        .isEqualTo("<image src=\"/jpetstore/images/fish3.gif\">Fresh Water fish from Japan");
-    assertThat(products.get(1).getProductId()).isEqualTo("FI-FW-02");
-    assertThat(products.get(1).getName()).isEqualTo("Goldfish");
-    assertThat(products.get(1).getCategoryId()).isEqualTo("FISH");
+        .isEqualTo("<image src=\"/jpetstore/images/gilet.svg\">Lightweight quilted down gilet");
+    assertThat(products.get(1).getProductId()).isEqualTo("OW-DJ-02");
+    assertThat(products.get(1).getName()).isEqualTo("Down Jacket");
+    assertThat(products.get(1).getCategoryId()).isEqualTo("OUTERWEAR");
     assertThat(products.get(1).getDescription())
-        .isEqualTo("<image src=\"/jpetstore/images/fish2.gif\">Fresh Water fish from China");
-    assertThat(products.get(2).getProductId()).isEqualTo("FI-SW-01");
-    assertThat(products.get(2).getName()).isEqualTo("Angelfish");
-    assertThat(products.get(2).getCategoryId()).isEqualTo("FISH");
+        .isEqualTo("<image src=\"/jpetstore/images/downjacket.svg\">Lacquered nylon down jacket with tonal quilting");
+    assertThat(products.get(2).getProductId()).isEqualTo("OW-PK-01");
+    assertThat(products.get(2).getName()).isEqualTo("Hooded Parka");
+    assertThat(products.get(2).getCategoryId()).isEqualTo("OUTERWEAR");
     assertThat(products.get(2).getDescription())
-        .isEqualTo("<image src=\"/jpetstore/images/fish1.gif\">Salt Water fish from Australia");
-    assertThat(products.get(3).getProductId()).isEqualTo("FI-SW-02");
-    assertThat(products.get(3).getName()).isEqualTo("Tiger Shark");
-    assertThat(products.get(3).getCategoryId()).isEqualTo("FISH");
+        .isEqualTo("<image src=\"/jpetstore/images/parka.svg\">Long down parka with detachable hood");
+    assertThat(products.get(3).getProductId()).isEqualTo("OW-RJ-02");
+    assertThat(products.get(3).getName()).isEqualTo("Rain Jacket");
+    assertThat(products.get(3).getCategoryId()).isEqualTo("OUTERWEAR");
     assertThat(products.get(3).getDescription())
-        .isEqualTo("<image src=\"/jpetstore/images/fish4.gif\">Salt Water fish from Australia");
+        .isEqualTo("<image src=\"/jpetstore/images/rainjacket.svg\">Water-repellent hooded shell jacket");
   }
 
   /**
@@ -82,17 +82,17 @@ class ProductMapperTest {
   @Test
   void getProduct() {
     // given
-    String productId = "FI-FW-01";
+    String productId = "OW-DG-01";
 
     // when
     Product product = mapper.getProduct(productId);
 
     // then
-    assertThat(product.getProductId()).isEqualTo("FI-FW-01");
-    assertThat(product.getName()).isEqualTo("Koi");
-    assertThat(product.getCategoryId()).isEqualTo("FISH");
+    assertThat(product.getProductId()).isEqualTo("OW-DG-01");
+    assertThat(product.getName()).isEqualTo("Down Gilet");
+    assertThat(product.getCategoryId()).isEqualTo("OUTERWEAR");
     assertThat(product.getDescription())
-        .isEqualTo("<image src=\"/jpetstore/images/fish3.gif\">Fresh Water fish from Japan");
+        .isEqualTo("<image src=\"/jpetstore/images/gilet.svg\">Lightweight quilted down gilet");
   }
 
   /**
@@ -109,19 +109,21 @@ class ProductMapperTest {
     // then
     products.sort(Comparator.comparing(Product::getProductId));
     System.out.println(products);
-    assertThat(products).hasSize(8);
-    assertThat(products.get(0).getProductId()).isEqualTo("AV-CB-01");
-    assertThat(products.get(0).getName()).isEqualTo("Amazon Parrot");
-    assertThat(products.get(0).getCategoryId()).isEqualTo("BIRDS");
+    assertThat(products).hasSize(10);
+    assertThat(products.get(0).getProductId()).isEqualTo("AC-BN-01");
+    assertThat(products.get(0).getName()).isEqualTo("Wool Beanie");
+    assertThat(products.get(0).getCategoryId()).isEqualTo("ACCESSORY");
     assertThat(products.get(0).getDescription())
-        .isEqualTo("<image src=\"/jpetstore/images/bird2.gif\">Great companion for up to 75 years");
-    assertThat(products.get(1).getName()).isEqualTo("Koi");
-    assertThat(products.get(2).getName()).isEqualTo("Goldfish");
-    assertThat(products.get(3).getName()).isEqualTo("Bulldog");
-    assertThat(products.get(4).getName()).isEqualTo("Dalmation");
-    assertThat(products.get(5).getName()).isEqualTo("Poodle");
-    assertThat(products.get(6).getName()).isEqualTo("Golden Retriever");
-    assertThat(products.get(7).getName()).isEqualTo("Labrador Retriever");
+        .isEqualTo("<image src=\"/jpetstore/images/beanie.svg\">Ribbed virgin wool beanie");
+    assertThat(products.get(1).getName()).isEqualTo("Merino Turtleneck");
+    assertThat(products.get(2).getName()).isEqualTo("Wool Cardigan");
+    assertThat(products.get(3).getName()).isEqualTo("Tricolor Zip Sweater");
+    assertThat(products.get(4).getName()).isEqualTo("Down Gilet");
+    assertThat(products.get(5).getName()).isEqualTo("Down Jacket");
+    assertThat(products.get(6).getName()).isEqualTo("Hooded Parka");
+    assertThat(products.get(7).getName()).isEqualTo("Oxford Shirt");
+    assertThat(products.get(8).getName()).isEqualTo("Polo Shirt");
+    assertThat(products.get(9).getName()).isEqualTo("Cargo Trousers");
   }
 
 }
