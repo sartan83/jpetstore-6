@@ -11,6 +11,11 @@ MyBatis JPetStore
 
 JPetStore 6 is a full web application built on top of MyBatis 3, Spring 5 and Stripes.
 
+## Requirements
+
+- Java 21 (LTS) or newer. The project is compiled with `--release 21`; the build itself also runs on JDK 25 and 26.
+- Maven 3.9.16 or newer (the bundled Maven wrapper `./mvnw` downloads a compatible version).
+
 ## Other versions that you may want to know about
 
 - JPetstore on top of Spring, Spring MVC, MyBatis 3, and Spring Security https://github.com/making/spring-jpetstore
@@ -43,22 +48,24 @@ Running JPetStore sample under Tomcat (using the [cargo-maven2-plugin](https://c
   >
   > We provide maven profiles per application server as follow:
   >
-  > | Profile             | Description                         |
-  > | ------------------- | ----------------------------------- |
-  > | tomcat9 (preferred) | Running under the Tomcat 9.0        |
-  > | glassfish5          | Running under the GlassFish 5       |
-  > | jetty12-ee8         | Running under the Jetty 12          |
-  > | liberty26-ee8       | Running under the WebSphere Liberty |
-  > | payara5             | Running under the Payara 5          |
-  > | resin4              | Running under the Resin 4           |
-  > | tomee8              | Running under the TomEE 8.0         |
-  > | wildfly26           | Running under the WildFly 26        |
+  > | Profile             | Description                         | Java 21 |
+  > | ------------------- | ----------------------------------- | ------- |
+  > | tomcat9 (preferred) | Running under the Tomcat 9.0        | Supported |
+  > | jetty12-ee8         | Running under the Jetty 12          | Supported |
+  > | liberty26-ee8       | Running under the WebSphere Liberty | Supported |
+  > | tomee8              | Running under the TomEE 8.0         | Supported |
+  > | wildfly26           | Running under the WildFly 26        | Supported |
+  > | glassfish5          | Running under the GlassFish 5       | Not compatible |
+  > | payara5             | Running under the Payara 5          | Not compatible |
+  > | resin4              | Running under the Resin 4           | Not compatible |
 
 - Run application in browser http://localhost:8080/jpetstore/
 - Press Ctrl-C to stop the server.
 
-- When using 'glassfish5', it must run under java 8 as it does not work with newer versions.  The code is set to 'D:/jdk/jdk-1.8.0.501'.  Your usage likely differs, so simply call with '-Dcargo.java.home=PATH-TO-JDK8'.
-- When using 'payara', the full maven buil must run under java 17, this is unlike glassfish5 due to how it connects with cargo.  In that case, use '-Denforcer.skip=true' to accomplish.
+- 'glassfish5', 'payara5' and 'resin4' are not compatible with Java 21 and are kept for reference only:
+  - 'glassfish5' only runs under Java 8, which cannot load classes compiled for Java 21.
+  - 'payara5' requires the whole build to run under Java 17 or older, which cannot compile for Java 21.
+  - 'resin4' is end of life and not certified for Java 21.
 
 ## Run on Docker
 ```

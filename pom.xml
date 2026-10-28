@@ -59,8 +59,8 @@
 
   <properties>
     <!-- Java Usage -->
-    <java.version>11</java.version>
-    <java.release.version>11</java.release.version>
+    <java.version>21</java.version>
+    <java.release.version>21</java.release.version>
 
     <!-- Configuration -->
     <clirr.comparisonVersion>6.0.2</clirr.comparisonVersion>
@@ -82,7 +82,7 @@
     <module.name>org.mybatis.jpetstore</module.name>
 
     <!-- Reproducible Builds -->
-    <project.build.outputTimestamp>1786845448</project.build.outputTimestamp>
+    <project.build.outputTimestamp>1793209253</project.build.outputTimestamp>
 
     <!-- Surefire Setup -->
     <argLine>-javaagent:${settings.localRepository}/net/bytebuddy/byte-buddy-agent/${byte-buddy.version}/byte-buddy-agent-${byte-buddy.version}.jar</argLine>
@@ -185,7 +185,6 @@
       <groupId>org.hsqldb</groupId>
       <artifactId>hsqldb</artifactId>
       <version>${hsqldb.version}</version>
-      <classifier>jdk8</classifier>
     </dependency>
 
     <!-- Test dependencies -->
@@ -359,7 +358,7 @@
     </profile>
 
     <profile>
-      <!-- Use 'payara5' as this is not supported with java 17 due to hk2 'dcs' is null error. -->
+      <!-- Not compatible with Java 21: GlassFish 5 only runs on JDK 8, which cannot load Java 21 bytecode. Kept for reference only. -->
       <id>glassfish5</id>
       <properties>
         <glassfish.major-version>5</glassfish.major-version>
@@ -454,6 +453,7 @@
     </profile>
 
     <profile>
+      <!-- Not compatible with Java 21: Payara 5 supports up to JDK 11 (17 with workarounds) and cannot run Java 21 bytecode. Kept for reference only. -->
       <id>payara5</id>
       <properties>
         <payara.major-version>5</payara.major-version>
@@ -483,6 +483,7 @@
     </profile>
 
     <profile>
+      <!-- Not compatible with Java 21: Resin 4 is end of life and not supported on JDK 21. Kept for reference only. -->
       <!-- TODO: Remove after we switch to jakarta as end of life and no longer supported. -->
       <id>resin4</id>
       <properties>
