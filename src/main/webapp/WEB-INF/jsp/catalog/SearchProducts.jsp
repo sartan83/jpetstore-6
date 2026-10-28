@@ -30,7 +30,7 @@
         <c:forEach var="product" items="${productList}">
             <tr>
                 <td><a href="${pageContext.request.contextPath}/catalog/viewProduct?productId=${product.productId}">${product.description}</a></td>
-                <td><b><a href="${pageContext.request.contextPath}/catalog/viewProduct?productId=${product.productId}"><font color="BLACK"> ${product.productId} </font></a></b></td>
+                <td><b><a href="${pageContext.request.contextPath}/catalog/viewProduct?productId=${product.productId}">${product.productId}</a></b></td>
                 <td>${product.name}</td>
             </tr>
         </c:forEach>

@@ -29,7 +29,7 @@
             <td><b> ${item.itemId} </b></td>
         </tr>
         <tr>
-            <td><b><font size="4"> ${item.attribute1} ${item.attribute2} ${item.attribute3} ${item.attribute4} ${item.attribute5} ${product.name} </font></b></td>
+            <td><span class="ItemTitle"> ${item.attribute1} ${item.attribute2} ${item.attribute3} ${item.attribute4} ${item.attribute5} ${product.name} </span></td>
         </tr>
         <tr>
             <td>${product.name}</td>

@@ -40,24 +40,24 @@
     <div id="Header">
 
         <div id="Logo">
-            <div id="LogoContent"><a href="${pageContext.request.contextPath}/catalog"><img src="${pageContext.request.contextPath}/images/logo-topbar.gif" /></a></div>
+            <div id="LogoContent"><a href="${pageContext.request.contextPath}/catalog"><span class="Wordmark">JPETSTORE</span><span class="Tagline">Maison of Companions &middot; Est. 2002</span></a></div>
         </div>
 
         <div id="Menu">
             <div id="MenuContent">
                 <a href="${pageContext.request.contextPath}/cart"><img align="middle" name="img_cart" src="${pageContext.request.contextPath}/images/cart.gif" /></a>
-                <img align="middle" src="${pageContext.request.contextPath}/images/separator.gif" />
+                <span class="Divider"></span>
                 <c:choose>
                     <c:when test="${sessionScope.accountBean == null || !sessionScope.accountBean.authenticated}">
                         <a href="${pageContext.request.contextPath}/account">Sign In</a>
                     </c:when>
                     <c:otherwise>
                         <a href="${pageContext.request.contextPath}/account/signoff">Sign Out</a>
-                        <img align="middle" src="${pageContext.request.contextPath}/images/separator.gif" />
+                        <span class="Divider"></span>
                         <a href="${pageContext.request.contextPath}/account/edit">My Account</a>
                     </c:otherwise>
                 </c:choose>
-                <img align="middle" src="${pageContext.request.contextPath}/images/separator.gif" />
+                <span class="Divider"></span>
                 <a href="${pageContext.request.contextPath}/help.html">?</a>
             </div>
         </div>
@@ -72,15 +72,15 @@
         </div>
 
         <div id="QuickLinks">
-            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=FISH"><img src="${pageContext.request.contextPath}/images/sm_fish.gif" /></a>
-            <img src="${pageContext.request.contextPath}/images/separator.gif" />
-            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=DOGS"><img src="${pageContext.request.contextPath}/images/sm_dogs.gif" /></a>
-            <img src="${pageContext.request.contextPath}/images/separator.gif" />
-            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=REPTILES"><img src="${pageContext.request.contextPath}/images/sm_reptiles.gif" /></a>
-            <img src="${pageContext.request.contextPath}/images/separator.gif" />
-            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=CATS"><img src="${pageContext.request.contextPath}/images/sm_cats.gif" /></a>
-            <img src="${pageContext.request.contextPath}/images/separator.gif" />
-            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=BIRDS"><img src="${pageContext.request.contextPath}/images/sm_birds.gif" /></a>
+            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=FISH">FISH</a>
+            <span class="Divider"></span>
+            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=DOGS">DOGS</a>
+            <span class="Divider"></span>
+            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=REPTILES">REPTILES</a>
+            <span class="Divider"></span>
+            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=CATS">CATS</a>
+            <span class="Divider"></span>
+            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=BIRDS">BIRDS</a>
         </div>
 
     </div>

@@ -14,54 +14,61 @@
  *    limitations under the License.
  */
 body {
-  margin: 0ex 10ex 0ex 10ex;
-  padding: 0ex;
-  font-family: helvetica, tahoma, arial, verdana, sans-serif;
-  font-size: 2ex;
-  color: #333;
-  background-color: #444;
+  margin: 0 6vw;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #000;
+  background-color: #000;
+  -webkit-font-smoothing: antialiased;
 }
 
 pre {
   font-family: "Courier New", Courier, monospace;
-
   font-style: normal;
-  background-color: #FFFFFF;
-  white-space: pre
+  background-color: #fff;
+  white-space: pre;
+}
+
+h1, h2, h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #000;
 }
 
 h1 {
-  margin: 1ex 0ex 1ex 0ex;
-  padding: 0ex;
-
-  line-height: 3ex;
+  margin: 0 0 32px 0;
+  padding: 0;
+  font-size: 30px;
+  line-height: 1.2;
   font-weight: 900;
-  color: #666;
+  letter-spacing: 0.2em;
 }
 
 h2 {
-  margin: 2ex 0ex 1ex 0ex;
-  padding: 0ex;
-
-  line-height: 2ex;
-  font-weight: 700;
-  color: #444;
+  margin: 40px 0 24px 0;
+  padding: 0 0 16px 0;
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  border-bottom: 1px solid #000;
 }
 
 h3 {
-  margin: 1ex 0ex 1ex 0ex;
-  padding: 0ex;
-
-  line-height: 1.6ex;
+  margin: 32px 0 16px 0;
+  padding: 0;
+  font-size: 13px;
+  line-height: 1.4;
   font-weight: 700;
-  color: #222;
+  letter-spacing: 0.2em;
 }
 
 p {
-  font-family: helvetica, tahoma, arial, verdana, sans-serif;
-
-  margin: 0ex 0ex 0ex 0ex;
-  padding: 2ex;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 12px 0;
 }
 
 img {
@@ -69,252 +76,486 @@ img {
 }
 
 li {
-  font-family: helvetica, tahoma, arial, verdana, sans-serif;
-
-  margin: 0ex 0ex 0ex 0ex;
-  padding: 0ex;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 4px 0;
 }
 
 table {
   border-width: 0;
+  border-collapse: collapse;
   empty-cells: show;
 }
 
 td, th {
   empty-cells: show;
-  padding: .3ex .3ex;
-  vertical-align: top;
+  padding: 16px 20px;
+  vertical-align: middle;
   text-align: left;
-  border-width: 0;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: #e5e5e5;
   border-spacing: 0;
-  background-color: #ececec
+  background-color: #fff;
 }
 
 th {
-  font-weight: bold;
-  background-color: #e2e2e2;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #000;
+  background-color: #fff;
+  border-bottom: 1px solid #000;
 }
 
+/* Links keep their DOM text: small caps give the uppercase look without
+   changing the rendered text used by By.linkText in the Selenide tests. */
 a, a:visited, a:link {
-  color: #039;
-
+  color: #000;
   text-decoration: none;
-  font-family: helvetica, tahoma, arial, verdana, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s ease, color .2s ease, background-color .2s ease;
 }
 
 a:hover {
-  color: #69f;
+  color: #000;
+  border-bottom-color: #e3001b;
+}
+
+input, select, textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  padding: 8px 10px;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #d0d0d0;
+  border-radius: 0;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #000;
+}
+
+input[type="checkbox"] {
+  padding: 0;
+  accent-color: #000;
+}
+
+a.Button, a.Button:link, a.Button:visited,
+input[type="submit"], input.Button,
+#Catalog input[type="submit"] {
+  display: inline-block;
+  padding: 12px 28px;
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #000;
+  border-radius: 0;
+  text-decoration: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: color .2s ease, background-color .2s ease;
 }
 
 a.Button, a.Button:link, a.Button:visited {
-  padding: .3ex;
-  color: #fff;
-  background-color: #005e21;
-  text-decoration: none;
-  font-family: helvetica, tahoma, arial, verdana, sans-serif;
-  font-size: 1.5ex;
+  font-variant-caps: all-small-caps;
+  font-size: 15px;
 }
 
-a.Button:hover {
+input[type="submit"], input.Button,
+#Catalog input[type="submit"] {
+  text-transform: uppercase;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+a.Button:hover,
+input[type="submit"]:hover, input.Button:hover,
+#Catalog input[type="submit"]:hover {
   color: #000;
-  background-color: #54c07a;
+  background-color: #fff;
+  border-color: #000;
 }
 
-#Logo {
-  width: 33%;
-  height: 9ex;
-  margin: 0ex 0ex 0ex 0ex;
-  padding: 0ex 0ex 0ex 0ex;
-  border-width: 0ex 0ex .3ex 0px;
-  border-style: solid;
-  border-color: #ccc;
+/* Header */
+
+#Header {
+  overflow: hidden;
+  background-color: #000;
+}
+
+#Logo, #Menu, #Search {
+  width: 33.33%;
+  height: 112px;
+  margin: 0;
+  padding: 0;
   float: left;
+  box-sizing: border-box;
+  border-bottom: 1px solid #333;
   background-color: #000;
   color: #fff;
-  line-height: 9ex;
+  line-height: 112px;
 }
 
-body>#Logo {
-  height: 9ex;
+body>#Logo, body>#Menu, body>#Search {
+  height: 112px;
+}
+
+#LogoContent {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+#LogoContent a, #LogoContent a:link, #LogoContent a:visited, #LogoContent a:hover {
+  color: #fff;
+  border-bottom: 0;
+}
+
+#LogoContent .Wordmark {
+  display: block;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 0.28em;
+}
+
+#LogoContent .Tagline {
+  display: block;
+  margin-top: 10px;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #999;
 }
 
 #Menu {
-  width: 33%;
-  height: 9ex;
-  margin: 0ex 0ex 0ex 0ex;
-  padding: 0ex 0ex 0ex 0ex;
-  border-width: 0ex 0ex .3ex 0px;
-  border-style: solid;
-  border-color: #ccc;
-  float: left;
-  background-color: #000;
-  color: #eaac00;
-  text-decoration: none;
-  font-family: helvetica, tahoma, arial, verdana, sans-serif;
   text-align: center;
-  line-height: 9ex;
 }
 
-#Menu, #Menu a, #Menu a:link, #Menu a:visited, #Menu a:hover {
-  color: #eaac00;
-  text-decoration: none;
-  font-family: helvetica, tahoma, arial, verdana, sans-serif;
+#Menu, #Menu a, #Menu a:link, #Menu a:visited {
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  font-variant-caps: all-small-caps;
 }
 
-body>#Menu {
-  height: 9ex;
+#Menu a:hover {
+  color: #fff;
+  border-bottom-color: #e3001b;
+}
+
+#Menu img {
+  vertical-align: middle;
+  filter: brightness(0) invert(1);
+}
+
+.Divider {
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  margin: 0 18px;
+  vertical-align: middle;
+  background-color: #555;
 }
 
 #Search {
-  width: 33%;
-  height: 9ex;
-  margin: 0ex 0ex 0ex 0ex;
-  padding: 0ex 0ex 0ex 0ex;
-  border-width: 0ex 0ex .3ex 0px;
-  border-style: solid;
-  border-color: #ccc;
-  float: left;
-  text-align: center;
+  text-align: right;
+}
+
+#Search form {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+#Search input[type="text"] {
+  width: 160px;
+  padding: 10px 12px;
+  color: #fff;
   background-color: #000;
-  color: #eaac00;
-  line-height: 9ex;
+  border: 1px solid #555;
+  letter-spacing: 0.08em;
 }
 
-body>#Search {
-  height: 9ex;
+#Search input[type="text"]:focus {
+  border-color: #fff;
 }
 
-#Search input {
-  border-width: .1ex .1ex .1ex .1ex;
-  border-style: solid;
-  border-color: #aaa;
-  background-color: #666;
-  color: #eaac00;
+#Search input[type="submit"] {
+  padding: 10px 20px;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+#Search input[type="submit"]:hover {
+  color: #fff;
+  background-color: #000;
 }
 
 #QuickLinks {
+  clear: both;
+  padding: 18px 0;
   text-align: center;
-  background-color: #FFF;
-  width: 99%;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+#QuickLinks a, #QuickLinks a:link, #QuickLinks a:visited {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #000;
+}
+
+#QuickLinks .Divider {
+  background-color: #ccc;
+  margin: 0 22px;
+}
+
+/* Footer */
+
+#Footer {
+  overflow: hidden;
+  background-color: #000;
+}
+
+#PoweredBy, #Banner {
+  height: 80px;
+  margin: 0;
+  padding: 0;
+  float: left;
+  box-sizing: border-box;
+  border-top: 1px solid #333;
+  background-color: #000;
+  color: #fff;
+  line-height: 80px;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
 }
 
 #PoweredBy {
   width: 30%;
-  height: 9ex;
-  margin: 0ex 0ex 0ex 0ex;
-  padding: 0ex 0ex 0ex 0ex;
-  border-width: .3ex 0ex .3ex 0px;
-  border-style: solid;
-  border-color: #ccc;
-  float: left;
-  background-color: #000;
-  color: #fff;
-  line-height: 9ex;
-}
-
-body>#PoweredBy {
-  height: 9ex;
 }
 
 #Banner {
-  width: 69%;
-  height: 9ex;
-  margin: 0ex 0ex 0ex 0ex;
-  padding: 0ex 0ex 0ex 0ex;
-  border-width: .3ex 0ex .3ex 0px;
-  border-style: solid;
-  border-color: #ccc;
-  float: left;
-  background-color: #000;
-  color: #fff;
-  line-height: 9ex;
+  width: 70%;
+  text-align: right;
 }
 
-body>#Banner {
-  height: 9ex;
+body>#PoweredBy, body>#Banner {
+  height: 80px;
 }
+
+#PoweredBy a, #PoweredBy a:link, #PoweredBy a:visited {
+  color: #fff;
+}
+
+#PoweredBy a:hover {
+  border-bottom-color: #e3001b;
+}
+
+#Banner img {
+  vertical-align: middle;
+  filter: grayscale(100%) invert(100%);
+}
+
+/* Content */
 
 #Content {
   margin: 0;
-  padding: 0ex 0ex 0ex 0ex;
-  width: 99%;
-  color: #333;
-  background-color: #FFF;
+  padding: 24px 64px 64px 64px;
+  color: #000;
+  background-color: #fff;
   border-width: 0;
 }
 
+#Content > h2:first-child {
+  margin-top: 24px;
+}
+
+.messages {
+  margin: 24px 0 0 0;
+  padding: 16px 20px;
+  list-style: none;
+  border-left: 2px solid #e3001b;
+  background-color: #fafafa;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+#Welcome {
+  padding: 24px 0 0 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
 #Separator {
-  clear:both;
+  clear: both;
   margin: 0;
-  height:0;
+  height: 0;
 }
 
 #Main {
   margin: 0;
-  padding: 1ex;
-  color: #333;
-  background-color: #FFF;
-  border-width: 1ex 0ex 2ex 0px;
-  border-style: solid;
-  border-color: #fff;
+  padding: 32px 0;
+  color: #000;
+  background-color: #fff;
+  border-width: 0;
 }
 
 #Sidebar {
   float: left;
-  background:inherit;
+  background: inherit;
   width: 30%;
+}
+
+#SidebarContent {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #777;
+  line-height: 1.8;
+}
+
+#SidebarContent a, #SidebarContent a:link, #SidebarContent a:visited {
+  display: inline-block;
+  margin-top: 28px;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  color: #000;
+}
+
+#SidebarContent a:first-child {
+  margin-top: 0;
 }
 
 #MainImage {
   float: left;
-  background:inherit;
-  text-align:center;
+  background: inherit;
+  text-align: center;
   width: 50%;
 }
 
+#MainImage img, #Catalog img {
+  filter: grayscale(100%) contrast(1.1);
+  transition: filter .4s ease;
+}
+
+#MainImage img:hover, #Catalog img:hover {
+  filter: none;
+}
+
 #Catalog {
-  padding: 1ex;
-  background:inherit;
-  text-align:center;
+  padding: 24px 0;
+  background: inherit;
+  text-align: center;
 }
 
-#Catalog input[type="submit"]{
-  padding: .3ex;
-  color: #fff;
-  background-color: #005e21;
-  text-decoration: none;
-  font-family: helvetica, tahoma, arial, verdana, sans-serif;
-  font-size: 1.5ex;
-  border-width:0;
-}
-#Catalog input[type="submit"]:hover {
-  color: #000;
-  background-color: #54c07a;
-  cursor:pointer;
+#Catalog table {
+  margin: 24px auto;
+  min-width: 60%;
 }
 
-#Catalog table{
-  margin-left:auto;
-  margin-right:auto;
-}
-
-#BackLink{
-  padding: 1ex;
+#BackLink {
+  margin: 24px 0 0 0;
+  padding: 0;
   float: right;
-  border-width: .1ex 0ex .1ex 0px;
-  border-style: solid;
-  border-color: #000;
+  border: 0;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-variant-caps: all-small-caps;
 }
 
-#Cart{
-  width: 69.99%;
-  float: left;
-  background-color:#fff;
+#BackLink a::before {
+  content: "\2190\00a0\00a0";
 }
 
-#MyList{
-  width: 30%;
+#Cart {
+  width: 100%;
   float: left;
-  background-color:#ccc;
-  text-align:left;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+#Cart table {
+  width: 100%;
+}
+
+#Cart td, #Cart th {
+  padding: 16px 12px;
+}
+
+#Cart td input[type="submit"] {
+  margin-left: 24px;
+}
+
+#Cart > a.Button {
+  margin-top: 32px;
+  float: right;
+}
+
+#MyList {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  margin-top: 48px;
+  padding: 0;
+  background-color: #fff;
+  text-align: left;
+  font-size: 13px;
+}
+
+#MyList p {
+  padding: 24px 0 8px 0;
+  border-top: 1px solid #000;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #777;
+}
+
+#MyList ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 3;
+}
+
+.ItemTitle {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.OrderTitle {
+  display: block;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+}
+
+.OrderDate {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: #777;
 }

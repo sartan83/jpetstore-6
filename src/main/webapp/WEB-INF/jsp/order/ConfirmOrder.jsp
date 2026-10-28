@@ -24,9 +24,8 @@
         <table>
             <tr>
                 <th align="center" colspan="2">
-                    <font size="4"><b>Order</b></font>
-                    <br />
-                    <font size="3"><b>${order.formattedOrderDate}</b></font>
+                    <span class="OrderTitle">Order</span>
+                    <span class="OrderDate">${order.formattedOrderDate}</span>
                 </th>
             </tr>
 
