@@ -26,7 +26,7 @@
 <head>
     <link rel="StyleSheet" href="${pageContext.request.contextPath}/css/jpetstore.css" type="text/css" media="screen" />
     <meta name="generator" content="HTML Tidy for Linux/x86 (vers 1st November 2002), see www.w3.org" />
-    <title>JPetStore Demo</title>
+    <title>Online Store</title>
     <meta content="text/html; charset=windows-1252" http-equiv="Content-Type" />
     <meta http-equiv="Cache-Control" content="max-age=0" />
     <meta http-equiv="Cache-Control" content="no-cache" />
@@ -40,7 +40,7 @@
     <div id="Header">
 
         <div id="Logo">
-            <div id="LogoContent"><a href="${pageContext.request.contextPath}/catalog"><span class="Wordmark">JPETSTORE</span><span class="Tagline">Maison of Companions &middot; Est. 2002</span></a></div>
+            <div id="LogoContent"><a href="${pageContext.request.contextPath}/catalog"><span class="Wordmark">ONLINE STORE</span><span class="Tagline">Outerwear &amp; Essentials &middot; Est. 2002</span></a></div>
         </div>
 
         <div id="Menu">
@@ -72,15 +72,15 @@
         </div>
 
         <div id="QuickLinks">
-            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=FISH">FISH</a>
+            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=OUTERWEAR">OUTERWEAR</a>
             <span class="Divider"></span>
-            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=DOGS">DOGS</a>
+            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=KNITWEAR">KNITWEAR</a>
             <span class="Divider"></span>
-            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=REPTILES">REPTILES</a>
+            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=TROUSERS">TROUSERS</a>
             <span class="Divider"></span>
-            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=CATS">CATS</a>
+            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=SHIRTS">SHIRTS</a>
             <span class="Divider"></span>
-            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=BIRDS">BIRDS</a>
+            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=ACCESSORY">ACCESSORIES</a>
         </div>
 
     </div>

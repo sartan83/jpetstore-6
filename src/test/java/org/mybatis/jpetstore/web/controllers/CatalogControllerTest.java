@@ -62,10 +62,10 @@ class CatalogControllerTest {
     Model model = new ExtendedModelMap();
     Category category = new Category();
     List<Product> products = List.of();
-    when(catalogService.getCategory("FISH")).thenReturn(category);
-    when(catalogService.getProductListByCategory("FISH")).thenReturn(products);
+    when(catalogService.getCategory("OUTERWEAR")).thenReturn(category);
+    when(catalogService.getProductListByCategory("OUTERWEAR")).thenReturn(products);
 
-    String view = catalogController.viewCategory("FISH", model);
+    String view = catalogController.viewCategory("OUTERWEAR", model);
 
     assertThat(view).isEqualTo("catalog/Category");
     assertThat(model.asMap()).containsKey("category");
@@ -119,12 +119,12 @@ class CatalogControllerTest {
   void viewProductWithValidIdPopulatesModel() {
     Model model = new ExtendedModelMap();
     Product product = new Product();
-    product.setProductId("FI-SW-01");
+    product.setProductId("OW-PK-01");
     List<Item> items = List.of();
-    when(catalogService.getProduct("FI-SW-01")).thenReturn(product);
-    when(catalogService.getItemListByProduct("FI-SW-01")).thenReturn(items);
+    when(catalogService.getProduct("OW-PK-01")).thenReturn(product);
+    when(catalogService.getItemListByProduct("OW-PK-01")).thenReturn(items);
 
-    String view = catalogController.viewProduct("FI-SW-01", model);
+    String view = catalogController.viewProduct("OW-PK-01", model);
 
     assertThat(view).isEqualTo("catalog/Product");
     assertThat(model.asMap().get("product")).isSameAs(product);
@@ -138,7 +138,7 @@ class CatalogControllerTest {
   void viewItemPopulatesModelWithItemAndProduct() {
     Model model = new ExtendedModelMap();
     Product product = new Product();
-    product.setProductId("FI-SW-01");
+    product.setProductId("OW-PK-01");
     Item item = new Item();
     item.setItemId("EST-1");
     item.setProduct(product);

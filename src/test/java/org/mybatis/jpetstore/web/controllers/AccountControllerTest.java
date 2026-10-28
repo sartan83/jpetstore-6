@@ -85,9 +85,9 @@ class AccountControllerTest {
     Model model = new ExtendedModelMap();
     Account account = new Account();
     account.setUsername("j2ee");
-    account.setFavouriteCategoryId("FISH");
+    account.setFavouriteCategoryId("OUTERWEAR");
     when(accountService.getAccount("j2ee", "j2ee")).thenReturn(account);
-    when(catalogService.getProductListByCategory("FISH")).thenReturn(List.of());
+    when(catalogService.getProductListByCategory("OUTERWEAR")).thenReturn(List.of());
 
     String view = accountController.signon("j2ee", "j2ee", session, model);
 
@@ -164,9 +164,9 @@ class AccountControllerTest {
     HttpSession session = mock(HttpSession.class);
     Account account = new Account();
     account.setUsername("j2ee");
-    account.setFavouriteCategoryId("FISH");
+    account.setFavouriteCategoryId("OUTERWEAR");
     when(accountService.getAccount("j2ee")).thenReturn(account);
-    when(catalogService.getProductListByCategory("FISH")).thenReturn(List.of());
+    when(catalogService.getProductListByCategory("OUTERWEAR")).thenReturn(List.of());
 
     String view = accountController.editAccount(account, session);
 

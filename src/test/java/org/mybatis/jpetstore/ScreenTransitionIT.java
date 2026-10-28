@@ -79,8 +79,8 @@ class ScreenTransitionIT {
 
     // Open the home page
     open("/");
-    assertThat(title()).isEqualTo("JPetStore Demo");
-    $(By.cssSelector("#Content h2")).shouldBe(text("Welcome to JPetStore 6"));
+    assertThat(title()).isEqualTo("Online Store");
+    $(By.cssSelector("#Content h2")).shouldBe(text("Welcome to Online Store"));
 
     // Move to the top page
     $(By.linkText("Enter the Store")).click();
@@ -94,13 +94,13 @@ class ScreenTransitionIT {
     $(By.id("WelcomeContent")).shouldBe(text("Welcome ABC!"));
 
     // Search items
-    $(By.name("keyword")).setValue("fish");
+    $(By.name("keyword")).setValue("jacket");
     $(By.name("searchProducts")).click();
     $$(By.cssSelector("#Catalog table tr")).shouldHave(size(4));
 
     // Select item
-    $(By.linkText("Fresh Water fish from China")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Goldfish"));
+    $(By.linkText("Lacquered nylon down jacket with tonal quilting")).click();
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Down Jacket"));
 
     // Add a item to the cart
     $(By.linkText("Add to Cart")).click();
@@ -108,24 +108,24 @@ class ScreenTransitionIT {
 
     // Add a item to the cart
     $(By.cssSelector("#QuickLinks a:nth-of-type(5)")).click();
-    $(By.linkText("AV-CB-01")).click();
+    $(By.linkText("AC-BN-01")).click();
     $(By.linkText("EST-18")).click();
     $(By.linkText("Add to Cart")).click();
-    $(By.cssSelector("#Cart tr:nth-of-type(4) td")).shouldBe(text("Sub Total: $199.00"));
+    $(By.cssSelector("#Cart tr:nth-of-type(4) td")).shouldBe(text("Sub Total: $1,800.00"));
 
     // Update quantity
     $(By.name("EST-20")).setValue("10");
     $(By.name("updateCartQuantities")).click();
-    $(By.cssSelector("#Catalog tr td:nth-of-type(7)")).shouldBe(text("$55.00"));
-    $(By.cssSelector("#Cart tr:nth-of-type(4) td")).shouldBe(text("Sub Total: $248.50"));
+    $(By.cssSelector("#Catalog tr td:nth-of-type(7)")).shouldBe(text("$14,500.00"));
+    $(By.cssSelector("#Cart tr:nth-of-type(4) td")).shouldBe(text("Sub Total: $14,850.00"));
 
     // Remove item
     $(By.cssSelector("#Cart tr:nth-of-type(3) td:nth-of-type(8) a")).click();
-    $(By.cssSelector("#Cart tr:nth-of-type(3) td")).shouldBe(text("Sub Total: $55.00"));
+    $(By.cssSelector("#Cart tr:nth-of-type(3) td")).shouldBe(text("Sub Total: $14,500.00"));
 
     // Checkout cart items
     $(By.linkText("Proceed to Checkout")).click();
-    assertThat(title()).isEqualTo("JPetStore Demo");
+    assertThat(title()).isEqualTo("Online Store");
 
     // Changing shipping address
     $(By.name("shippingAddressRequired")).click();
@@ -167,7 +167,7 @@ class ScreenTransitionIT {
   void testUpdateProfile() {
     // Open the home page
     open("/");
-    assertThat(title()).isEqualTo("JPetStore Demo");
+    assertThat(title()).isEqualTo("Online Store");
 
     // Move to the top page
     $(By.linkText("Enter the Store")).click();
@@ -200,7 +200,7 @@ class ScreenTransitionIT {
   void testRegistrationUser() {
     // Open the home page
     open("/");
-    assertThat(title()).isEqualTo("JPetStore Demo");
+    assertThat(title()).isEqualTo("Online Store");
 
     // Move to the top page
     $(By.linkText("Enter the Store")).click();
@@ -230,7 +230,7 @@ class ScreenTransitionIT {
     $(By.name("zip")).setValue("0001234");
     $(By.name("country")).setValue("Japan");
     $(By.name("languagePreference")).selectOption("japanese");
-    $(By.name("favouriteCategoryId")).selectOption("CATS");
+    $(By.name("favouriteCategoryId")).selectOption("SHIRTS");
     $(By.name("listOption")).setSelected(true);
     $(By.name("bannerOption")).setSelected(true);
     $(By.name("newAccount")).click();
@@ -252,7 +252,7 @@ class ScreenTransitionIT {
   void testSelectItems() {
     // Open the home page
     open("/");
-    assertThat(title()).isEqualTo("JPetStore Demo");
+    assertThat(title()).isEqualTo("Online Store");
 
     // Move to the top page
     $(By.linkText("Enter the Store")).click();
@@ -260,23 +260,23 @@ class ScreenTransitionIT {
 
     // Move to category
     $(By.cssSelector("#SidebarContent a")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Fish"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Outerwear"));
 
     // Move to items
-    $(By.linkText("FI-SW-01")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Angelfish"));
+    $(By.linkText("OW-PK-01")).click();
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Hooded Parka"));
 
     // Move to item detail
     $(By.linkText("EST-1")).click();
-    $$(By.cssSelector("#Catalog table tr td")).get(2).shouldBe(text("Large Angelfish"));
+    $$(By.cssSelector("#Catalog table tr td")).get(2).shouldBe(text("Large Hooded Parka"));
 
     // Back to items
-    $(By.linkText("Return to FI-SW-01")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Angelfish"));
+    $(By.linkText("Return to OW-PK-01")).click();
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Hooded Parka"));
 
     // Back to category
-    $(By.linkText("Return to FISH")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Fish"));
+    $(By.linkText("Return to OUTERWEAR")).click();
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Outerwear"));
 
     // Back to the top page
     $(By.linkText("Return to Main Menu")).click();
@@ -292,7 +292,7 @@ class ScreenTransitionIT {
 
     // Open the home page
     open("/");
-    assertThat(title()).isEqualTo("JPetStore Demo");
+    assertThat(title()).isEqualTo("Online Store");
 
     // Move to the top page
     $(By.linkText("Enter the Store")).click();
@@ -312,7 +312,7 @@ class ScreenTransitionIT {
 
     // Open the home page
     open("/");
-    assertThat(title()).isEqualTo("JPetStore Demo");
+    assertThat(title()).isEqualTo("Online Store");
 
     // Move to the top page
     $(By.linkText("Enter the Store")).click();
@@ -320,7 +320,7 @@ class ScreenTransitionIT {
 
     // Move to help
     $(By.linkText("?")).click();
-    $(By.cssSelector("#Content h1")).shouldBe(text("JPetStore Demo"));
+    $(By.cssSelector("#Content h1")).shouldBe(text("Online Store"));
 
   }
 
@@ -331,35 +331,35 @@ class ScreenTransitionIT {
   void testSidebarContentOnTopPage() {
     // Open the home page
     open("/");
-    assertThat(title()).isEqualTo("JPetStore Demo");
+    assertThat(title()).isEqualTo("Online Store");
 
     // Move to the top page
     $(By.linkText("Enter the Store")).click();
     $(By.id("WelcomeContent")).shouldBe(empty);
 
-    // Move to Fish category
+    // Move to Outerwear category
     $(By.cssSelector("#SidebarContent a:nth-of-type(1)")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Fish"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Outerwear"));
     $(By.linkText("Return to Main Menu")).click();
 
-    // Move to Dogs category
+    // Move to Knitwear category
     $(By.cssSelector("#SidebarContent a:nth-of-type(2)")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Dogs"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Knitwear"));
     $(By.linkText("Return to Main Menu")).click();
 
-    // Move to Cats category
+    // Move to Shirts category
     $(By.cssSelector("#SidebarContent a:nth-of-type(3)")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Cats"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Shirts"));
     $(By.linkText("Return to Main Menu")).click();
 
-    // Move to Reptiles category
+    // Move to Trousers category
     $(By.cssSelector("#SidebarContent a:nth-of-type(4)")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Reptiles"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Trousers"));
     $(By.linkText("Return to Main Menu")).click();
 
-    // Move to Birds category
+    // Move to Accessories category
     $(By.cssSelector("#SidebarContent a:nth-of-type(5)")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Birds"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Accessories"));
     $(By.linkText("Return to Main Menu")).click();
   }
 
@@ -370,31 +370,31 @@ class ScreenTransitionIT {
   void testQuickLinks() {
     // Open the home page
     open("/");
-    assertThat(title()).isEqualTo("JPetStore Demo");
+    assertThat(title()).isEqualTo("Online Store");
 
     // Move to the top page
     $(By.linkText("Enter the Store")).click();
     $(By.id("WelcomeContent")).shouldBe(empty);
 
-    // Move to Fish category
+    // Move to Outerwear category
     $(By.cssSelector("#QuickLinks a:nth-of-type(1)")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Fish"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Outerwear"));
 
-    // Move to Dogs category
+    // Move to Knitwear category
     $(By.cssSelector("#QuickLinks a:nth-of-type(2)")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Dogs"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Knitwear"));
 
-    // Move to Reptiles category
+    // Move to Trousers category
     $(By.cssSelector("#QuickLinks a:nth-of-type(3)")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Reptiles"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Trousers"));
 
-    // Move to Cats category
+    // Move to Shirts category
     $(By.cssSelector("#QuickLinks a:nth-of-type(4)")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Cats"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Shirts"));
 
-    // Move to Birds category
+    // Move to Accessories category
     $(By.cssSelector("#QuickLinks a:nth-of-type(5)")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Birds"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Accessories"));
   }
 
   /**
@@ -404,40 +404,40 @@ class ScreenTransitionIT {
   void testMainImageContentOnTopPage() {
     // Open the home page
     open("/");
-    assertThat(title()).isEqualTo("JPetStore Demo");
+    assertThat(title()).isEqualTo("Online Store");
 
     // Move to the top page
     $(By.linkText("Enter the Store")).click();
     $(By.id("WelcomeContent")).shouldBe(empty);
 
-    // Move to Birds category
+    // Move to Accessories category
     $(By.cssSelector("#MainImageContent area:nth-of-type(1)")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Birds"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Outerwear"));
     $(By.linkText("Return to Main Menu")).click();
 
-    // Move to Fish category
+    // Move to Outerwear category
     $(By.cssSelector("#MainImageContent area:nth-of-type(2)")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Fish"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Accessories"));
     $(By.linkText("Return to Main Menu")).click();
 
-    // Move to Dogs category
+    // Move to Knitwear category
     $(By.cssSelector("#MainImageContent area:nth-of-type(3)")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Dogs"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Knitwear"));
     $(By.linkText("Return to Main Menu")).click();
 
-    // Move to Reptiles category
+    // Move to Trousers category
     $(By.cssSelector("#MainImageContent area:nth-of-type(4)")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Reptiles"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Trousers"));
     $(By.linkText("Return to Main Menu")).click();
 
-    // Move to Cats category
+    // Move to Shirts category
     $(By.cssSelector("#MainImageContent area:nth-of-type(5)")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Cats"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Shirts"));
     $(By.linkText("Return to Main Menu")).click();
 
-    // Move to Birds category
+    // Move to Accessories category
     $(By.cssSelector("#MainImageContent area:nth-of-type(6)")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Birds"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Accessories"));
     $(By.linkText("Return to Main Menu")).click();
   }
 
@@ -448,22 +448,22 @@ class ScreenTransitionIT {
   void testLogoContent() {
     // Open the home page
     open("/");
-    assertThat(title()).isEqualTo("JPetStore Demo");
+    assertThat(title()).isEqualTo("Online Store");
 
     // Move to the top page
     $(By.linkText("Enter the Store")).click();
     $(By.id("WelcomeContent")).shouldBe(empty);
 
-    // Move to Birds category
+    // Move to Accessories category
     $(By.cssSelector("#MainImageContent area:nth-of-type(1)")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Birds"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Outerwear"));
 
     // Move to top by clicking logo
     $(By.cssSelector("#LogoContent a")).click();
 
-    // Move to Cats category
+    // Move to Shirts category
     $(By.cssSelector("#MainImageContent area:nth-of-type(5)")).click();
-    $(By.cssSelector("#Catalog h2")).shouldBe(text("Cats"));
+    $(By.cssSelector("#Catalog h2")).shouldBe(text("Shirts"));
   }
 
   /**

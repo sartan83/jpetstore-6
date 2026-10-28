@@ -54,7 +54,7 @@ class ItemMapperTest {
   @Test
   void getItemListByProduct() {
     // given
-    String productId = "FI-SW-01";
+    String productId = "OW-PK-01";
 
     // when
     List<Item> items = mapper.getItemListByProduct(productId);
@@ -63,8 +63,8 @@ class ItemMapperTest {
     items.sort(Comparator.comparing(Item::getItemId));
     assertThat(items).hasSize(2);
     assertThat(items.get(0).getItemId()).isEqualTo("EST-1");
-    assertThat(items.get(0).getListPrice()).isEqualTo(new BigDecimal("16.50"));
-    assertThat(items.get(0).getUnitCost()).isEqualTo(new BigDecimal("10.00"));
+    assertThat(items.get(0).getListPrice()).isEqualTo(new BigDecimal("1850.00"));
+    assertThat(items.get(0).getUnitCost()).isEqualTo(new BigDecimal("740.00"));
     assertThat(items.get(0).getSupplierId()).isEqualTo(1);
     assertThat(items.get(0).getStatus()).isEqualTo("P");
     assertThat(items.get(0).getAttribute1()).isEqualTo("Large");
@@ -72,14 +72,14 @@ class ItemMapperTest {
     assertThat(items.get(0).getAttribute3()).isNull();
     assertThat(items.get(0).getAttribute4()).isNull();
     assertThat(items.get(0).getAttribute5()).isNull();
-    assertThat(items.get(0).getProduct().getProductId()).isEqualTo("FI-SW-01");
-    assertThat(items.get(0).getProduct().getName()).isEqualTo("Angelfish");
+    assertThat(items.get(0).getProduct().getProductId()).isEqualTo("OW-PK-01");
+    assertThat(items.get(0).getProduct().getName()).isEqualTo("Hooded Parka");
     assertThat(items.get(0).getProduct().getDescription())
-        .isEqualTo("<image src=\"/jpetstore/images/fish1.gif\">Salt Water fish from Australia");
-    assertThat(items.get(0).getProduct().getCategoryId()).isEqualTo("FISH");
+        .isEqualTo("<image src=\"/jpetstore/images/parka.svg\">Long down parka with detachable hood");
+    assertThat(items.get(0).getProduct().getCategoryId()).isEqualTo("OUTERWEAR");
     assertThat(items.get(1).getItemId()).isEqualTo("EST-2");
-    assertThat(items.get(1).getListPrice()).isEqualTo(new BigDecimal("16.50"));
-    assertThat(items.get(1).getUnitCost()).isEqualTo(new BigDecimal("10.00"));
+    assertThat(items.get(1).getListPrice()).isEqualTo(new BigDecimal("1850.00"));
+    assertThat(items.get(1).getUnitCost()).isEqualTo(new BigDecimal("740.00"));
     assertThat(items.get(1).getSupplierId()).isEqualTo(1);
     assertThat(items.get(1).getStatus()).isEqualTo("P");
     assertThat(items.get(1).getAttribute1()).isEqualTo("Small");
@@ -87,11 +87,11 @@ class ItemMapperTest {
     assertThat(items.get(1).getAttribute3()).isNull();
     assertThat(items.get(1).getAttribute4()).isNull();
     assertThat(items.get(1).getAttribute5()).isNull();
-    assertThat(items.get(1).getProduct().getProductId()).isEqualTo("FI-SW-01");
-    assertThat(items.get(1).getProduct().getName()).isEqualTo("Angelfish");
+    assertThat(items.get(1).getProduct().getProductId()).isEqualTo("OW-PK-01");
+    assertThat(items.get(1).getProduct().getName()).isEqualTo("Hooded Parka");
     assertThat(items.get(1).getProduct().getDescription())
-        .isEqualTo("<image src=\"/jpetstore/images/fish1.gif\">Salt Water fish from Australia");
-    assertThat(items.get(1).getProduct().getCategoryId()).isEqualTo("FISH");
+        .isEqualTo("<image src=\"/jpetstore/images/parka.svg\">Long down parka with detachable hood");
+    assertThat(items.get(1).getProduct().getCategoryId()).isEqualTo("OUTERWEAR");
   }
 
   /**
@@ -107,8 +107,8 @@ class ItemMapperTest {
 
     // then
     assertThat(item.getItemId()).isEqualTo("EST-1");
-    assertThat(item.getListPrice()).isEqualTo(new BigDecimal("16.50"));
-    assertThat(item.getUnitCost()).isEqualTo(new BigDecimal("10.00"));
+    assertThat(item.getListPrice()).isEqualTo(new BigDecimal("1850.00"));
+    assertThat(item.getUnitCost()).isEqualTo(new BigDecimal("740.00"));
     assertThat(item.getSupplierId()).isEqualTo(1);
     assertThat(item.getStatus()).isEqualTo("P");
     assertThat(item.getAttribute1()).isEqualTo("Large");
@@ -116,11 +116,11 @@ class ItemMapperTest {
     assertThat(item.getAttribute3()).isNull();
     assertThat(item.getAttribute4()).isNull();
     assertThat(item.getAttribute5()).isNull();
-    assertThat(item.getProduct().getProductId()).isEqualTo("FI-SW-01");
-    assertThat(item.getProduct().getName()).isEqualTo("Angelfish");
+    assertThat(item.getProduct().getProductId()).isEqualTo("OW-PK-01");
+    assertThat(item.getProduct().getName()).isEqualTo("Hooded Parka");
     assertThat(item.getProduct().getDescription())
-        .isEqualTo("<image src=\"/jpetstore/images/fish1.gif\">Salt Water fish from Australia");
-    assertThat(item.getProduct().getCategoryId()).isEqualTo("FISH");
+        .isEqualTo("<image src=\"/jpetstore/images/parka.svg\">Long down parka with detachable hood");
+    assertThat(item.getProduct().getCategoryId()).isEqualTo("OUTERWEAR");
   }
 
   /**

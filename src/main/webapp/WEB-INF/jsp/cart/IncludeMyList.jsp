@@ -16,8 +16,8 @@
 
 --%>
 <c:if test="${not empty sessionScope.accountBean.myList}">
-    <p>Pet Favorites <br />
-    Shop for more of your favorite pets here.</p>
+    <p>Your Favorites <br />
+    Shop for more of your favorite pieces here.</p>
     <ul>
         <c:forEach var="product" items="${sessionScope.accountBean.myList}">
             <li><a href="${pageContext.request.contextPath}/catalog/viewProduct?productId=${product.productId}">${product.name}</a> (${product.productId})</li>

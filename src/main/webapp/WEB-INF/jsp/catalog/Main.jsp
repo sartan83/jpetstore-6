@@ -30,30 +30,30 @@
 <div id="Main">
     <div id="Sidebar">
         <div id="SidebarContent">
-            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=FISH">FISH</a> <br />
-            Saltwater, Freshwater <br />
-            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=DOGS">DOGS</a> <br />
-            Various Breeds <br />
-            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=CATS">CATS</a> <br />
-            Various Breeds, Exotic Varieties <br />
-            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=REPTILES">REPTILES</a> <br />
-            Lizards, Turtles, Snakes <br />
-            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=BIRDS">BIRDS</a> <br />
-            Exotic Varieties
+            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=OUTERWEAR">OUTERWEAR</a> <br />
+            Down Jackets, Parkas, Gilets <br />
+            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=KNITWEAR">KNITWEAR</a> <br />
+            Cashmere, Merino, Cardigans <br />
+            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=SHIRTS">SHIRTS</a> <br />
+            Polo, Oxford <br />
+            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=TROUSERS">TROUSERS</a> <br />
+            Cargo, Track Pants <br />
+            <a href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=ACCESSORY">ACCESSORIES</a> <br />
+            Beanies, Scarves
         </div>
     </div>
 
     <div id="MainImage">
         <div id="MainImageContent">
             <map name="estoremap">
-                <area alt="Birds" coords="72,2,280,250" href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=BIRDS" shape="RECT" />
-                <area alt="Fish" coords="2,180,72,250" href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=FISH" shape="RECT" />
-                <area alt="Dogs" coords="60,250,130,320" href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=DOGS" shape="RECT" />
-                <area alt="Reptiles" coords="140,270,210,340" href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=REPTILES" shape="RECT" />
-                <area alt="Cats" coords="225,240,295,310" href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=CATS" shape="RECT" />
-                <area alt="Birds" coords="280,180,350,250" href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=BIRDS" shape="RECT" />
+                <area alt="Outerwear" coords="72,2,280,250" href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=OUTERWEAR" shape="RECT" />
+                <area alt="Accessories" coords="2,180,72,250" href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=ACCESSORY" shape="RECT" />
+                <area alt="Knitwear" coords="60,250,130,320" href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=KNITWEAR" shape="RECT" />
+                <area alt="Trousers" coords="140,270,210,340" href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=TROUSERS" shape="RECT" />
+                <area alt="Shirts" coords="225,240,295,310" href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=SHIRTS" shape="RECT" />
+                <area alt="Accessories" coords="280,180,350,250" href="${pageContext.request.contextPath}/catalog/viewCategory?categoryId=ACCESSORY" shape="RECT" />
             </map>
-            <img height="355" src="${pageContext.request.contextPath}/images/splash.gif" align="middle" usemap="#estoremap" width="350" />
+            <img height="355" src="${pageContext.request.contextPath}/images/splash.svg" align="middle" usemap="#estoremap" width="350" />
         </div>
     </div>
 
